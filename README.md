@@ -5,6 +5,19 @@
 For the NeurotechX Fixed Challenge, MINT is building an EEG collection system from scratch, that will accurately and effectively collect scalp potentials and minimise noise.
 The system will use an Arudino microcontroller to send the data aqcuired to the computer. We will then use a python script to live-plot the fourier transform of the data recieved. 
 
+The UBC MINT EEG acquisition system consists of the following components:
+- Differential amplifiers,
+- Active analog low-pass filters,
+- Analog to digital conversion,
+- Digital 60 Hz notch filtering, and
+- Display of the acquired EEG signals
+
+The block diagram in Figure 1 shows the system as a whole.
+
+
+Figure 1. System block diagram
+
+
 We made our design choices based on availability and affordabiliity such that other teams can recreate our system. 
 
 ## Usage
