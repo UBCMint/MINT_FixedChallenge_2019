@@ -35,6 +35,11 @@ The chosen differential amplifier used in each channel is the AD620 instrumental
 The circuit schematic for the differential amplifier is shown in Figure 2 below.
 ![Differential Amplifier](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Differential%20Amplifier.png)
 
+The positive input (AD620_IN+) is from an electrode placed on the scalp. The negative input (AD620_IN-) is from an electrode placed on a bony body part to use as a reference signal.
+ 
+The AD620 gain is given by the following equation.
+G=49.4kRG+1
+The AD620 is configured to have a gain of approximately 1000 by setting the single external gain resistor to 49Ω.  From this, the output signal of the AD620 (AD620_OUT) is a 1000x amplified version of the differential signal between the channel and the reference signal.
 
 ## Software:
 We are using python to collect data from an Arduino and plotting the fourier transform of the the EEG signal in realtime. This allows us to see the peaks in amplitude of the different frequencies of brain signals.
