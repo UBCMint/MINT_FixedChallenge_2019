@@ -46,28 +46,20 @@ The AD620 is configured to have a gain of approximately 1000 by setting the sing
 ## Low Pass Filter
 The low pass filter is an active, second-order Butterworth filter that attenuates frequencies above 100 Hz since the frequency range of EEG signals has a maximum of 100 Hz. The schematic of the Butterworth filter is shown in Figure 3. The OP281 is the dual operational amplifier that was chosen for the filter.
 
+![Low pass Filter](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/LowpassFilter.png)
 
-## Software:
-We are using python to collect data from an Arduino and plotting the fourier transform of the the EEG signal in realtime. This allows us to see the peaks in amplitude of the different frequencies of brain signals.
+Figure 3. Butterworth low pass filter amplifier circuit schematic
 
-![Python GUI](https://raw.githubusercontent.com/UBCMint/FixedChallenge/master/PythonGUI/screenshots/plot.PNG)
+The analog outputs of the differential amplifiers are filtered before being converted to digital signals.
 
-We chose to use pyqtgraph instead of matplotlib to improve the speed of live plotting. We originally prototyped with Matlab, but found that Python provided a better GUI and realtime plotting.
-As seen in the above figure, the top two graphs depict the original sine wave and the bottom two graphs depict the transformed graph. The script can be easily changed to display 4 FFT plots from 4 channels.
+## Analog to Digital Conversion
+An Arduino Leonardo in conjunction with a Mayhew Labs extended ADC shield was chosen to perform analog to digital conversion on the amplified and filtered EEG signals. The extended ADC shield has 8 single-ended ADC inputs that can be sampled at 100 000 samples/s at a 16-bit resolution. It also allows for an input voltage range of -25 V to +25 V, enabling the direct use of the filtered EEG signal without requiring rectification.
 
-Some challenges we had in designing this script was sending the signals through the serial port and making sure python was able to designate the right label to each signal. For example, when a signal from a single channel was missed such as A1, the remaining signals would shift and the previous
-A2 would become A1. This was solved by sending all four signals in a string from the Arduino and then parsing in Python accordingly. 
+## Digital Notch Filter & EEG Signal Display
+The digital notch filter was done using Python in conjunction with the Num.py and PyQtGraph libraries to assist with the signal processing  and signal display. The filter takes the input and converts it into a 2D array which is then run through a FFT algorithm. Then, using a simple loop to remove all entries between index 59 and 61 (a particularly noisy frequency range) via the enumerate function, we were able to create the effect of a notch filter. The signal was then plotted using the PyQt graphing functions. To calibrate the graphing function to match with real time input we have to scale the index down by a factor of 2.13 and so the actual filter index we used was a range of 27-30hz.  
 
-### Limitations
-The limitations of the software application include the number of channels that acquire data and the delay in the real-time plotting.
-
-To increase the number of channels, we could use more of the pins available on the Arduino. This can be easily added into the python script, albeit we are limited to the 
-number of pins on the Arduino or microcontroller we are using. In the future, we could add more interative components to our system, such as a GUI that allows the user to start and stop data acquisition. Another improvement would include the ability to save data and retrieve previous data. These
-extra features could also be implemented through a phone app.
 
 ## Budget
-PCB Components $157
-PCB $20
 
 ## About Us
 
