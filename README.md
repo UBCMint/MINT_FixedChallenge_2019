@@ -33,7 +33,7 @@ The chosen electrodes are gel electrodes, chosen for their ease of accessibility
 The chosen differential amplifier used in each channel is the AD620 instrumental amplifier. The AD620 is chosen for its low cost and high accuracy. Furthermore, it has low noise, low input bias current, and low power consumption characteristics.
 
 The circuit schematic for the differential amplifier is shown in Figure 2 below.
-
+![Differential Amplifier](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Differential%20Amplifier.png)
 
 
 ## Software:
