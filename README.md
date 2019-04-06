@@ -26,8 +26,15 @@ The four electrode signals will be processed through the circuit and received by
 
 **Important**: Remember to change the port name to what you see in your Arduino IDE (e.g. "Arduino Leonardo on COM4") and to run the correct Arduino program for whichever script you're using (2Reads for 2Time2FFT.py, 4Reads for 4Time.py and 4FFT.py)
 
-## Circuit:
-The 4-channel EEG system consists of instrumentation amplifier and Sallen-key second-order low pass filter.
+## Electrodes
+The chosen electrodes are gel electrodes, chosen for their ease of accessibility and use.
+
+## Differential Amplifier
+The chosen differential amplifier used in each channel is the AD620 instrumental amplifier. The AD620 is chosen for its low cost and high accuracy. Furthermore, it has low noise, low input bias current, and low power consumption characteristics.
+
+The circuit schematic for the differential amplifier is shown in Figure 2 below.
+
+
 
 ## Software:
 We are using python to collect data from an Arduino and plotting the fourier transform of the the EEG signal in realtime. This allows us to see the peaks in amplitude of the different frequencies of brain signals.
