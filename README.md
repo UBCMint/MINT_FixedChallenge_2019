@@ -66,6 +66,8 @@ number of pins on the Arduino or microcontroller we are using. In the future, we
 extra features could also be implemented through a phone app.
 
 ## Budget
+PCB Components $157
+PCB $20
 
 ## About Us
 
