@@ -13,7 +13,7 @@ The UBC MINT EEG acquisition system consists of the following components:
 - Display of the acquired EEG signals
 
 The block diagram in Figure 1 shows the system as a whole.
-
+![block diagram](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/NeuroTechX%202019%20System%20Block%20Diagram.png)
 
 Figure 1. System block diagram
 
