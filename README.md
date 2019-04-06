@@ -19,7 +19,7 @@ The 4-channel EEG system consists of instrumentation amplifier and Sallen-key se
 ## Software:
 We are using python to collect data from an Arduino and plotting the fourier transform of the the EEG signal in realtime. This allows us to see the peaks in amplitude of the different frequencies of brain signals.
 
-![Python GUI]
+![Python GUI](https://raw.githubusercontent.com/UBCMint/FixedChallenge/master/PythonGUI/screenshots/plot.PNG)
 
 We chose to use pyqtgraph instead of matplotlib to improve the speed of live plotting. We originally prototyped with Matlab, but found that Python provided a better GUI and realtime plotting.
 As seen in the above figure, the top two graphs depict the original sine wave and the bottom two graphs depict the transformed graph. The script can be easily changed to display 4 FFT plots from 4 channels.
