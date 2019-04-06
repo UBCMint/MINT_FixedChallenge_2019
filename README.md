@@ -38,7 +38,7 @@ The circuit schematic for the differential amplifier is shown in Figure 2 below.
 The positive input (AD620_IN+) is from an electrode placed on the scalp. The negative input (AD620_IN-) is from an electrode placed on a bony body part to use as a reference signal.
  
 The AD620 gain is given by the following equation.
-G=49.4kRG+1
+G = (49.4kOhm)/RG+1
 The AD620 is configured to have a gain of approximately 1000 by setting the single external gain resistor to 49Ω.  From this, the output signal of the AD620 (AD620_OUT) is a 1000x amplified version of the differential signal between the channel and the reference signal.
 
 ## Software:
