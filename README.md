@@ -39,7 +39,7 @@ The positive input (AD620_IN+) is from an electrode placed on the scalp. The neg
  
 The AD620 gain is given by the following equation.
 
-G = (49.4kOhm)/RG+1
+![Gain equation](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/Gain%20equation.png)
 
 The AD620 is configured to have a gain of approximately 1000 by setting the single external gain resistor to 49Ω.  From this, the output signal of the AD620 (AD620_OUT) is a 1000x amplified version of the differential signal between the channel and the reference signal.
 
@@ -55,6 +55,7 @@ The analog outputs of the differential amplifiers are filtered before being conv
 ## Analog to Digital Conversion
 An Arduino Leonardo in conjunction with a Mayhew Labs extended ADC shield was chosen to perform analog to digital conversion on the amplified and filtered EEG signals. The extended ADC shield has 8 single-ended ADC inputs that can be sampled at 100 000 samples/s at a 16-bit resolution. It also allows for an input voltage range of -25 V to +25 V, enabling the direct use of the filtered EEG signal without requiring rectification.
 ![ADC Shield](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/ADC%20shield.png)
+Figure 4. Mayhew Labs extended ADC shield
 
 ## Digital Notch Filter & EEG Signal Display
 The digital notch filter was done using Python in conjunction with the Num.py and PyQtGraph libraries to assist with the signal processing  and signal display. The filter takes the input and converts it into a 2D array which is then run through a FFT algorithm. Then, using a simple loop to remove all entries between index 59 and 61 (a particularly noisy frequency range) via the enumerate function, we were able to create the effect of a notch filter. The signal was then plotted using the PyQt graphing functions. To calibrate the graphing function to match with real time input we have to scale the index down by a factor of 2.13 and so the actual filter index we used was a range of 27-30hz.  
