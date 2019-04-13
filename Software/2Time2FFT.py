@@ -1,3 +1,10 @@
+# Author: MINT
+# Updated: April 13th, 2019
+# Reads two values from serial and plots their FFTs in four plots in pyqtgrapg
+# Top two graphs are plain signal and bottom two graphs are FFT data
+# Adjust port_name to whatever it says in the Arduino IDE
+# Arduino program: 2Reads
+
 
 import numpy as np
 from numpy import fft
@@ -92,7 +99,7 @@ def update():
 	FFFT1 = [f if (index > 3 and f > 1 or index < 29 and f >1 or index > 30 and f > 1) else 0 for index, f in enumerate(FFT1)]
 	FFT1=FFFT1[1:1000] 
 	FFT2=np.abs(fft.fft(Xm2))
-	FFT2=FFT2[1:251]
+	FFT2=FFT2[1:1000]
 	curve3.setData(np.linspace(0,220,999), FFT1)
 	curve4.setData(np.linspace(0,540,250), FFT2)
 
