@@ -35,6 +35,8 @@ The chosen differential amplifier used in each channel is the AD620 instrumental
 The circuit schematic for the differential amplifier is shown in Figure 2 below.
 ![Differential Amplifier](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/Differential%20Amplifier.png)
 
+Figure 2. Differential amplifier circuit schematic
+
 The positive input (AD620_IN+) is from an electrode placed on the scalp. The negative input (AD620_IN-) is from an electrode placed on a bony body part to use as a reference signal.
  
 The AD620 gain is given by the following equation.
