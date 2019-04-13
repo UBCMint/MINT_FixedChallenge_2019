@@ -1,7 +1,7 @@
 # Author: MINT
 # Updated: April 13th, 2019
 # Reads two values from serial and plots their FFTs in four plots in pyqtgrapg
-# Top two graphs are plain signal and bottom two graphs are FFT data
+# Top two graphs are plain signal and bottom two graphs are 60Hz filtered FFT signal
 # Adjust port_name to whatever it says in the Arduino IDE
 # Arduino program: 2Reads
 
@@ -94,7 +94,7 @@ def update():
 	except ValueError:
 		pass
 
-	
+    # filter out 60Hz note: the filter cuts out a frequency 2.13 times larger than the index target	
 	FFT1=np.abs(fft.fft(Xm1))
 	FFFT1 = [f if (index > 3 and f > 1 or index < 29 and f >1 or index > 30 and f > 1) else 0 for index, f in enumerate(FFT1)]
 	FFT1=FFFT1[1:1000] 
