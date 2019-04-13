@@ -68,6 +68,7 @@ The digital notch filter was done using Python in conjunction with the Num.py an
 - Extended ADC Shield $48
 - PCB Components $170
 - Arduino Leonardo $40
+
 Total = $278
 
 ## About Us
