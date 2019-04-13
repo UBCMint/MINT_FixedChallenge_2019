@@ -1,5 +1,5 @@
-# Author: Jessica Ma
-# Date: March 13th, 2018
+# Author: MINT
+# Updated: April 13th, 2019
 # Reads four values from serial and plots their FFTs in four plots in pyqtgraph
 # Adjust port_name to whatever it says in the Arduino IDE
 # Arduino program: 4Reads
@@ -119,10 +119,10 @@ def update():
 	curve3.setPos(ptr,0)
 	curve4.setPos(ptr,0)
 #currently not displaying the 4 channels correctly, adjust
-	curve1.setData(np.linspace(0,340,499), FFT1)
+	curve1.setData(np.linspace(0,1080,499), FFT1)
 	curve2.setData(np.linspace(0,1080,499), FFT2)
-	curve3.setData(np.linspace(0,170,250), FFT3)
-	curve4.setData(np.linspace(0,170,250), FFT4)
+	curve3.setData(np.linspace(0,1080,499), FFT3)
+	curve4.setData(np.linspace(0,1080,499), FFT4)
 	
 	QtGui.QApplication.processEvents()
 
