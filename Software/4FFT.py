@@ -1,5 +1,5 @@
-# Author: Jessica Ma
-# Date: March 13th, 2018
+# Author: MINT
+# Updated: April 13th, 2019
 # Reads four values from serial and plots their FFTs in four plots in pyqtgraph
 # Adjust port_name to whatever it says in the Arduino IDE
 # Arduino program: 4Reads
