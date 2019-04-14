@@ -56,7 +56,7 @@ The analog outputs of the differential amplifiers are filtered before being conv
 
 ## PCB
 
-![PCB](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png)<!-- .element height="50%" width="50%" -->
+![PCB](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png){:height="50%" width="50%"}
 
 ## Analog to Digital Conversion
 An Arduino Leonardo in conjunction with a Mayhew Labs extended ADC shield was chosen to perform analog to digital conversion on the amplified and filtered EEG signals. The extended ADC shield has 8 single-ended ADC inputs that can be sampled at 100 000 samples/s at a 16-bit resolution. It also allows for an input voltage range of -25 V to +25 V, enabling the direct use of the filtered EEG signal without requiring rectification.
