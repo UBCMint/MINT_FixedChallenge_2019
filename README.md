@@ -56,14 +56,18 @@ The analog outputs of the differential amplifiers are filtered before being conv
 
 ## PCB
 
-![PCB](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png){:height="50%" width="50%"}
+We decided to use PCB instead of breadboard in order to reduce noise from the breadboard and the dangling wires. After determining the EEG circuit, we designed the PCB using Altium software and then put the electronic components on using solder paste stenciling and reflow oven.
+
+<img src = "https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png" height = "50" width = "50">
+
+Figure 4. Assemblied PCB with 4 channels.
 
 ## Analog to Digital Conversion
 An Arduino Leonardo in conjunction with a Mayhew Labs extended ADC shield was chosen to perform analog to digital conversion on the amplified and filtered EEG signals. The extended ADC shield has 8 single-ended ADC inputs that can be sampled at 100 000 samples/s at a 16-bit resolution. It also allows for an input voltage range of -25 V to +25 V, enabling the direct use of the filtered EEG signal without requiring rectification.
 
 ![ADC Shield](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/ADC%20shield.png)
 
-Figure 4. Mayhew Labs extended ADC shield
+Figure 5. Mayhew Labs extended ADC shield
 
 ## Digital Notch Filter & EEG Signal Display
 The digital notch filter was done using Python in conjunction with the Num.py and PyQtGraph libraries to assist with the signal processing  and signal display. The filter takes the input and converts it into a 2D array which is then run through a FFT algorithm. Then, using a simple loop to remove all entries between index 59 and 61 (a particularly noisy frequency range) via the enumerate function, we were able to create the effect of a notch filter. The signal was then plotted using the PyQt graphing functions. To calibrate the graphing function to match with real time input we have to scale the index down by a factor of 2.13 and so the actual filter index we used was a range of 27-30hz.  
