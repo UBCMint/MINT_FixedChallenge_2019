@@ -58,13 +58,14 @@ The analog outputs of the differential amplifiers are filtered before being conv
 
 We decided to use PCB instead of breadboard in order to reduce noise from the breadboard and the dangling wires. After determining the EEG circuit, we designed the PCB using Altium software and then put the electronic components on using solder paste stenciling and reflow oven.
 
-<img src = "https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png" height = "250" width = "250">
+<img src = "https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png" height = "250" width = "350">
 
 Figure 4. Assemblied PCB with 4 channels.
 
 ## Analog to Digital Conversion
 An Arduino Leonardo in conjunction with a Mayhew Labs extended ADC shield was chosen to perform analog to digital conversion on the amplified and filtered EEG signals. The extended ADC shield has 8 single-ended ADC inputs that can be sampled at 100 000 samples/s at a 16-bit resolution. It also allows for an input voltage range of -25 V to +25 V, enabling the direct use of the filtered EEG signal without requiring rectification.
 
+<img src = "https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/ADC%20shield.png" height = "250" width = "350">
 ![ADC Shield](https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/ADC%20shield.png)
 
 Figure 5. Mayhew Labs extended ADC shield
