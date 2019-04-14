@@ -3,7 +3,7 @@
 ## Background
 
 For the NeurotechX Fixed Challenge, MINT is building an EEG collection system from scratch, that will accurately and effectively collect scalp potentials and minimise noise.
-The system will use an Arudino microcontroller to send the data aqcuired to the computer. We will then use a python script to live-plot the fourier transform of the data recieved. 
+The system will use an Arudino microcontroller to send the data aqcuired to the computer. We will then use a python script to live-plot the fourier transform of the data received. 
 
 The UBC MINT EEG acquisition system consists of the following components:
 - Differential amplifiers,
@@ -53,6 +53,10 @@ The low pass filter is an active, second-order Butterworth filter that attenuate
 Figure 3. Butterworth low pass filter amplifier circuit schematic
 
 The analog outputs of the differential amplifiers are filtered before being converted to digital signals.
+
+## PCB
+
+![PCB] (https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB.jpg)
 
 ## Analog to Digital Conversion
 An Arduino Leonardo in conjunction with a Mayhew Labs extended ADC shield was chosen to perform analog to digital conversion on the amplified and filtered EEG signals. The extended ADC shield has 8 single-ended ADC inputs that can be sampled at 100 000 samples/s at a 16-bit resolution. It also allows for an input voltage range of -25 V to +25 V, enabling the direct use of the filtered EEG signal without requiring rectification.
