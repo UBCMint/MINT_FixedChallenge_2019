@@ -58,7 +58,7 @@ The analog outputs of the differential amplifiers are filtered before being conv
 
 We decided to use PCB instead of breadboard in order to reduce noise from the breadboard and the dangling wires. After determining the EEG circuit, we designed the PCB using Altium software and then put the electronic components on using solder paste stenciling and reflow oven.
 
-<img PCB = "https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png" height = "200" width = "200">
+<img src = "https://github.com/UBCMint/MINT_FixedChallenge_2019/blob/master/Figures/PCB_resize.png" height = "250" width = "250">
 
 Figure 4. Assemblied PCB with 4 channels.
 
